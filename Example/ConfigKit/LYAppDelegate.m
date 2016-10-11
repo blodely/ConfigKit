@@ -7,12 +7,16 @@
 //
 
 #import "LYAppDelegate.h"
+#import "ConfigKit.h"
+
 
 @implementation LYAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // OVERRIDE POINT FOR CUSTOMIZATION AFTER APPLICATION LAUNCH.
+	
+	[[ConfigKit kit] systemStyle];
+	
     return YES;
 }
 

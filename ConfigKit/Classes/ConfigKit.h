@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXPORT NSString *const LIB_CONFIGKIT_BUNDLE_ID;
+FOUNDATION_EXPORT NSString *const NAME_CONF_SYSTEM_STYLE;
+
 @interface ConfigKit : NSObject
 
 + (instancetype)kit;
@@ -16,5 +19,11 @@
  *  CONFIGURE SYSTEM STYLE
  */
 - (void)systemStyle;
+
+@end
+
+@interface UIColor (Hex)
+
++ (UIColor *)colorWithHex:(NSString *)hexstring;
 
 @end
