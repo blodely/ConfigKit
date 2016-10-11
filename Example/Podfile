@@ -1,7 +1,11 @@
+platform :ios, '9.3'
+
 use_frameworks!
 
 target 'ConfigKit_Example' do
   pod 'ConfigKit', :path => '../'
+  
+  # pod 'SVProgressHUD', '~> 2.0.3'
 
   target 'ConfigKit_Tests' do
     inherit! :search_paths

@@ -2,11 +2,12 @@
 //  LYViewController.m
 //  ConfigKit
 //
-//  Created by 骆昱 on 10/11/2016.
-//  Copyright (c) 2016 骆昱. All rights reserved.
+//  CREATED BY LUO YU ON 2016-10-11.
+//  COPYRIGHT © 2016 LUO YU. ALL RIGHTS RESERVED.
 //
 
 #import "LYViewController.h"
+#import "ConfigKit.h"
 
 @interface LYViewController ()
 

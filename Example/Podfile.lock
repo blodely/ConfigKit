@@ -1,0 +1,16 @@
+PODS:
+  - ConfigKit (0.1.0)
+
+DEPENDENCIES:
+  - ConfigKit (from `../`)
+
+EXTERNAL SOURCES:
+  ConfigKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ConfigKit: bda535c65bf824f8152526bef5662d3bd378c13d
+
+PODFILE CHECKSUM: 47ff1fc6a0b3426d9385d5bfd1098b7208c3c7b9
+
+COCOAPODS: 1.1.0.beta.2
