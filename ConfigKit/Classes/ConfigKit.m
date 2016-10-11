@@ -43,7 +43,7 @@ NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE 
 	
 	confpath = [[NSBundle mainBundle] pathForResource:NAME_CONF_SYSTEM_STYLE ofType:@"plist"];
 	
-	if (confpath == nil || [confpath isEqualToString:@""] == YES || [FCFileManager isFileItemAtPath:confpath]) {
+	if (confpath == nil || [confpath isEqualToString:@""] == YES || [FCFileManager isFileItemAtPath:confpath] == NO) {
 		
 		NSLog(@"ConfigKit WARNING\n\tAPP CONFIGURATION FILE WAS NOT FOUND.\n\t%@", confpath);
 
