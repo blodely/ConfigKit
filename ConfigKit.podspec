@@ -20,7 +20,7 @@ Configuration toolkit.
 
   s.ios.deployment_target = '9.3'
 
-  s.source_files = 'ConfigKit/Classes/**/*'
+  s.source_files = 'ConfigKit/Classes/**/*', 'ConfigKit/Configurations/*.plist'
   
   # s.resource_bundles = {
   #   'ConfigKit' => ['ConfigKit/Assets/*.png']
@@ -29,5 +29,8 @@ Configuration toolkit.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  # s.dependency 'FileManager', :git => 'http://192.168.7.2:8081/r/hacomp/FileManager.git'
+  s.dependency 'FCFileManager', '~> 1.0.18'
 
 end

@@ -7,6 +7,7 @@
 //
 
 #import "ConfigKit.h"
+#import "FCFileManager.h"
 
 @interface ConfigKit () {
 }
