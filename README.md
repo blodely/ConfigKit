@@ -17,7 +17,7 @@ ConfigKit is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ConfigKit"
+pod "ConfigKit", :git => 'http://192.168.7.2:8081/r/hacomp/ConfigKit.git'
 ```
 
 ## Author
