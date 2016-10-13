@@ -7,7 +7,6 @@
 //
 
 #import "ConfigKit.h"
-#import <UIKit/UIKit.h>
 #import "FCFileManager.h"
 
 NSString *const LIB_CONFIGKIT_BUNDLE_ID = @"org.cocoapods.ConfigKit";

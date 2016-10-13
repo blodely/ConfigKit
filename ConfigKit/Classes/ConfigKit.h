@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 FOUNDATION_EXPORT NSString *const LIB_CONFIGKIT_BUNDLE_ID;
 FOUNDATION_EXPORT NSString *const NAME_CONF_SYSTEM_STYLE;
