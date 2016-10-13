@@ -30,7 +30,7 @@ Configuration toolkit.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-  # s.dependency 'FileManager', :git => 'http://192.168.7.2:8081/r/hacomp/FileManager.git'
+  s.frameworks = 'UIKit'
   s.dependency 'FCFileManager', '~> 1.0.18'
 
 end

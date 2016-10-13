@@ -22,6 +22,8 @@ FOUNDATION_EXPORT NSString *const NAME_CONF_SYSTEM_STYLE;
 
 @end
 
+@class UIColor;
+
 @interface UIColor (Hex)
 
 + (UIColor *)colorWithHex:(NSString *)hexstring;
