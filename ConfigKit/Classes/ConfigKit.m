@@ -12,6 +12,9 @@
 NSString *const LIB_CONFIGKIT_BUNDLE_ID = @"org.cocoapods.ConfigKit";
 NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE CHANGED
 
+NSString *const CONFIGKIT_LANG = @"config.kit.lang";
+NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
+
 @interface ConfigKit () {
 	
 	NSString *confValue;
@@ -39,6 +42,40 @@ NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE 
 
 - (void)systemStyle {
 	
+	__weak NSDictionary *conf = [self readConfigurationFile];
+	
+	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
+	
+	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHex:conf[@"sys-navbar-bar-tint-color"][confValue]]];
+	[[UINavigationBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-navbar-tint-color"][confValue]]];
+	
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
+}
+
+- (void)setLocale:(NSString *)localeName {
+	
+	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
+	
+	[[self availableLangs] containsObject:localeName] ? NSLog(@"YES") : NSLog(@"NO");
+	
+	if ([[self availableLangs] containsObject:localeName]) {
+		[[NSUserDefaults standardUserDefaults] setObject:localeName forKey:CONFIGKIT_LANG];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+		
+		[[NSNotificationCenter defaultCenter] postNotificationName:NOTIF_LANGUAGE_CHANGED object:nil userInfo:@{@"LANGUAGE":localeName,}];
+	} else {
+		NSLog(@"\n\nCONFIGKIT ERROR\n\tSWITCH LANGUAGE FAILED\n");
+	}
+	
+}
+
+- (NSArray *)availableLanguages {
+	return [self readConfigurationFile][@"sys-languages"][confValue];
+}
+
+// MARK: PRIVATE METHOD
+
+- (NSDictionary *)readConfigurationFile {
 	NSString *confpath;
 	
 	confpath = [[NSBundle mainBundle] pathForResource:NAME_CONF_SYSTEM_STYLE ofType:@"plist"];
@@ -46,7 +83,7 @@ NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE 
 	if (confpath == nil || [confpath isEqualToString:@""] == YES || [FCFileManager isFileItemAtPath:confpath] == NO) {
 		
 		NSLog(@"ConfigKit WARNING\n\tAPP CONFIGURATION FILE WAS NOT FOUND.\n\t%@", confpath);
-
+		
 		// FALLBACK TO LIB DEFAULT
 		confpath = [[NSBundle bundleWithIdentifier:LIB_CONFIGKIT_BUNDLE_ID] pathForResource:NAME_CONF_SYSTEM_STYLE ofType:@"plist"];
 	}
@@ -58,14 +95,17 @@ NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE 
 		NSLog(@"ConfigKit ERROR\n\tCONFIGURATION FILE WAS NEVER FOUND.");
 	}
 	
-	// NSLog(@"%@", conf);
+//	NSLog(@"%@", conf);
 	
-	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
-	
-	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHex:conf[@"sys-navbar-bar-tint-color"][confValue]]];
-	[[UINavigationBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-navbar-tint-color"][confValue]]];
-	
-	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
+	return conf;
+}
+
+- (NSArray *)availableLangs {
+	NSMutableArray *langs = [NSMutableArray arrayWithCapacity:1];
+	for (NSDictionary *one in [self readConfigurationFile][@"sys-languages"][confValue]) {
+		[langs addObject:one[confValue]];
+	}
+	return [NSArray arrayWithArray:langs];
 }
 
 @end

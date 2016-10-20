@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "NSString+ConfigKitLocale.h"
 
 FOUNDATION_EXPORT NSString *const LIB_CONFIGKIT_BUNDLE_ID;
 FOUNDATION_EXPORT NSString *const NAME_CONF_SYSTEM_STYLE;
+
+FOUNDATION_EXPORT NSString *const CONFIGKIT_LANG;
+FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 
 @interface ConfigKit : NSObject
 
@@ -20,6 +24,10 @@ FOUNDATION_EXPORT NSString *const NAME_CONF_SYSTEM_STYLE;
  *  CONFIGURE SYSTEM STYLE
  */
 - (void)systemStyle;
+
+- (void)setLocale:(NSString *)localeName;
+
+- (NSArray *)availableLanguages;
 
 @end
 
