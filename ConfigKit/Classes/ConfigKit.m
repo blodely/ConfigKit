@@ -58,7 +58,7 @@ NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE 
 		NSLog(@"ConfigKit ERROR\n\tCONFIGURATION FILE WAS NEVER FOUND.");
 	}
 	
-	NSLog(@"%@", conf);
+	// NSLog(@"%@", conf);
 	
 	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
 	
