@@ -22,7 +22,16 @@
 	
 	self.navigationItem.title = @"sample";
 	
+//	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
+//	[[self availableLangs] containsObject:localeName] ? NSLog(@"YES") : NSLog(@"NO");
+	
+	[[ConfigKit kit] availableLanguages];
+	
 	[[ConfigKit kit] setLocale:@"zh-Hans"];
+	
+	NSLocalizedString(@"", nil);
+	
+	[@"" localized];
 	
 }
 

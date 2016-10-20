@@ -54,10 +54,6 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 
 - (void)setLocale:(NSString *)localeName {
 	
-	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
-	
-	[[self availableLangs] containsObject:localeName] ? NSLog(@"YES") : NSLog(@"NO");
-	
 	if ([[self availableLangs] containsObject:localeName]) {
 		[[NSUserDefaults standardUserDefaults] setObject:localeName forKey:CONFIGKIT_LANG];
 		[[NSUserDefaults standardUserDefaults] synchronize];
