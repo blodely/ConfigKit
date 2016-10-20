@@ -22,6 +22,8 @@
 	
 	self.navigationItem.title = @"sample";
 	
+	[[ConfigKit kit] setLocale:@"zh-Hans"];
+	
 }
 
 - (void)didReceiveMemoryWarning
