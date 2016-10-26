@@ -65,6 +65,27 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	
 }
 
+- (NSInteger)selectedLocaleIndex {
+	
+	NSString *localeName = [[NSUserDefaults standardUserDefaults] objectForKey:CONFIGKIT_LANG];
+	
+	NSArray *langs = [self availableLangs];
+	
+	if (localeName == nil || [langs containsObject:localeName] == NO) {
+		return 0;
+	}
+	
+	NSInteger *idx = 0;
+	for (int i = 0; i < langs; i++) {
+		if ([langs[i] isEqualToString:localeName]) {
+			idx = i;
+			break;
+		}
+	}
+	
+	return idx;
+}
+
 - (NSArray *)availableLanguages {
 	return [self readConfigurationFile][@"sys-languages"][confValue];
 }
