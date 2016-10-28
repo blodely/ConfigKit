@@ -1,6 +1,6 @@
 //
 //  NSString+ConfigKitLocale.h
-//  Pods
+//  ConfigKit
 //
 //  CREATED BY LUO YU ON 2016-10-20.
 //  COPYRIGHT © 2016 LUO YU. ALL RIGHTS RESERVED.

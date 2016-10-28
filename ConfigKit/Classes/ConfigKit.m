@@ -1,6 +1,6 @@
 //
 //  ConfigKit.m
-//  Pods
+//  ConfigKit
 //
 //  CREATED BY LUO YU ON 2016-09-13.
 //  COPYRIGHT © 2016 LUO YU. ALL RIGHTS RESERVED.
