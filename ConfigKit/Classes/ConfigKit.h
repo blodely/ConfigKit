@@ -25,6 +25,9 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
  */
 - (void)systemStyle;
 
+/**
+ *  LANGUAGES
+ */
 - (void)setLocale:(NSString *)localeName;
 
 - (NSInteger)selectedLocaleIndex;
