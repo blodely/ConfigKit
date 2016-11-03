@@ -45,15 +45,18 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	
 	__weak NSDictionary *conf = [self readConfigurationFile];
 	
+	// STATUS BAR
 	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
 	
+	// NAVIGATION BAR TITLE
 	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHex:conf[@"sys-navbar-bar-tint-color"][confValue]]];
 	[[UINavigationBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-navbar-tint-color"][confValue]]];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
 	
+	// NAVIGATION BAR BACK BUTTON
 	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
 	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
-	
-	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
+	[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)setLocale:(NSString *)localeName {
