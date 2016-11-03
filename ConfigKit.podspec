@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'ConfigKit'
-  s.version = '1.1.1'
+  s.version = '1.1.2'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
@@ -23,9 +23,9 @@ System style, Language setter.
 
   s.source_files = 'ConfigKit/Classes/**/*', 'ConfigKit/Configurations/*.plist'
   
-  # s.resource_bundles = {
-  #   'ConfigKit' => ['ConfigKit/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'ConfigKitRes' => ['ConfigKit/Assets/*.png']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
