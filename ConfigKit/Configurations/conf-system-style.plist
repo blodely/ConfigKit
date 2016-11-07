@@ -30,6 +30,13 @@
 		<key>conf-value</key>
 		<string>#000000</string>
 	</dict>
+	<key>sys-navbar-bottom-line</key>
+	<dict>
+		<key>name</key>
+		<string>UINavigationBar bottom line</string>
+		<key>conf-value</key>
+		<string>1</string>
+	</dict>
 	<key>sys-languages</key>
 	<dict>
 		<key>name</key>

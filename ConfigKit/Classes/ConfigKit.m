@@ -53,6 +53,11 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	[[UINavigationBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-navbar-tint-color"][confValue]]];
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
 	
+	// REMOVE BAR STYLE
+	if ([conf[@"sys-navbar-bottom-line"] integerValue] > 0) {
+		[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+	}
+	
 	// NAVIGATION BAR BACK BUTTON
 	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
 	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
