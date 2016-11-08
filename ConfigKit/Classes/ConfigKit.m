@@ -54,7 +54,7 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
 	
 	// REMOVE BAR STYLE
-	if ([conf[@"sys-navbar-bottom-line"] integerValue] > 0) {
+	if ([conf[@"sys-navbar-bottom-line"][confValue] integerValue] > 0) {
 		[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 	}
 	
