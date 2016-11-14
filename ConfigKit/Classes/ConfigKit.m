@@ -58,6 +58,9 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 		[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 	}
 	
+	// UITABBAR
+	[[UITabBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-tabbar-tint-color"][confValue]]];
+	
 	// NAVIGATION BAR BACK BUTTON
 	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
 	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];

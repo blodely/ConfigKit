@@ -37,6 +37,13 @@
 		<key>conf-value</key>
 		<string>1</string>
 	</dict>
+	<key>sys-tabbar-tint-color</key>
+	<dict>
+		<key>name</key>
+		<string>UITabBar tint color</string>
+		<key>conf-value</key>
+		<string>#000000</string>
+	</dict>
 	<key>sys-languages</key>
 	<dict>
 		<key>name</key>
