@@ -90,8 +90,8 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 		return 0;
 	}
 	
-	NSInteger *idx = 0;
-	for (int i = 0; i < langs; i++) {
+	NSInteger idx = 0;
+	for (int i = 0; i < [langs count]; i++) {
 		if ([langs[i] isEqualToString:localeName]) {
 			idx = i;
 			break;
