@@ -62,8 +62,8 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	[[UITabBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-tabbar-tint-color"][confValue]]];
 	
 	// NAVIGATION BAR BACK BUTTON
-	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
-	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[NSBundle configkitResBundle] compatibleWithTraitCollection:nil]];
+	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil]];
+	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil]];
 	[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
 }
 
@@ -146,7 +146,7 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 
 @end
 
-@implementation UIColor (Hex)
+@implementation UIColor (ConfigKitHex)
 
 + (UIColor *)colorWithHex:(NSString *)hexstring {
 	// WE FOUND AN EMPTY STRING, WE ARE RETURNING NOTHING
@@ -188,6 +188,21 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	hexValueScanner = nil;
 	
 	return [UIColor colorWithRed:redInt/255.0f green:greenInt/255.0f blue:blueInt/255.0f alpha:1.0f];
+}
+
+@end
+
+@implementation NSString (ConfigKitLocale)
+
+- (NSString *)localized {
+	
+	// SET DEFAULT VALUE
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:CONFIGKIT_LANG] == nil) {
+		[[NSUserDefaults standardUserDefaults] setObject:@"zh-Hans" forKey:CONFIGKIT_LANG];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+	
+	return [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:CONFIGKIT_LANG]] ofType:@"lproj"]] localizedStringForKey:(self) value:nil table:@"Localizable"];
 }
 
 @end
