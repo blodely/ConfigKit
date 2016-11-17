@@ -23,6 +23,13 @@
 		<key>conf-value</key>
 		<string>#ffffff</string>
 	</dict>
+	<key>sys-navbar-translucent</key>
+	<dict>
+		<key>name</key>
+		<string>UINavigationBar translucent</string>
+		<key>conf-value</key>
+		<true/>
+	</dict>
 	<key>sys-navbar-title-foreground-color</key>
 	<dict>
 		<key>name</key>
