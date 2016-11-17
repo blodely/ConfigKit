@@ -22,6 +22,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		890F48711DD1A9E500957FF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */; };
+		B61C12B41DDD605900EDBB30 /* conf-system-style.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61C12B31DDD605900EDBB30 /* conf-system-style.plist */; };
 		BF76D2F2BFCF84E7B50FB729 /* Pods_ConfigKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7EDE8025C568B47195A492 /* Pods_ConfigKit_Tests.framework */; };
 		D6F982719808C40F6D5A1854 /* Pods_ConfigKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1ED508D4810FC250A98D85 /* Pods_ConfigKit_Example.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91407B5EE316A2034A113185 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B61C12B31DDD605900EDBB30 /* conf-system-style.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "conf-system-style.plist"; sourceTree = "<group>"; };
 		BD7EDE8025C568B47195A492 /* Pods_ConfigKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfigKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEDBA9EB98056A2FA92970 /* Pods-ConfigKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfigKit_Example/Pods-ConfigKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FCD4351146381AEF6A794753 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */,
 				6003F5A5195388D20070C39A /* LYViewController.h */,
 				6003F5A6195388D20070C39A /* LYViewController.m */,
+				B61C12B31DDD605900EDBB30 /* conf-system-style.plist */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -284,6 +287,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				890F48711DD1A9E500957FF5 /* LaunchScreen.storyboard in Resources */,
+				B61C12B41DDD605900EDBB30 /* conf-system-style.plist in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);

@@ -8,7 +8,6 @@
 
 #import "ConfigKit.h"
 #import "FCFileManager.h"
-#import "NSBundle+ConfigKit.h"
 
 NSString *const LIB_CONFIGKIT_BUNDLE_ID = @"org.cocoapods.ConfigKit";
 NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE CHANGED
@@ -139,6 +138,10 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 		[langs addObject:one[confValue]];
 	}
 	return [NSArray arrayWithArray:langs];
+}
+
+- (NSBundle *)configkitResBundle {
+	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[ConfigKit class]] URLForResource:@"ConfigKitRes" withExtension:@"bundle"]];
 }
 
 @end
