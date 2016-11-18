@@ -4,12 +4,14 @@
 
 Pod::Spec.new do |s|
   s.name = 'ConfigKit'
-  s.version = '1.2.0'
+  s.version = '1.2.1'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
 Configuration toolkit.
-System style, Language setter.
+System style.
+Language setter.
+Libs configuration file reader.
                        DESC
 
   s.homepage = 'http://192.168.7.2:8081/docs/hacomp%2FConfigKit.git'

@@ -42,7 +42,7 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 
 - (void)systemStyle {
 	
-	__weak NSDictionary *conf = [self readConfigurationFile];
+	__weak NSDictionary *conf = [self readConfigurationNamed:NAME_CONF_SYSTEM_STYLE andLibBundleIdentifier:LIB_CONFIGKIT_BUNDLE_ID];
 	
 	// STATUS BAR
 	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
@@ -102,39 +102,41 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 }
 
 - (NSArray *)availableLanguages {
-	return [self readConfigurationFile][@"sys-languages"][confValue];
+	return [self readConfigurationNamed:NAME_CONF_SYSTEM_STYLE andLibBundleIdentifier:LIB_CONFIGKIT_BUNDLE_ID][@"sys-languages"][confValue];
 }
 
-// MARK: PRIVATE METHOD
-
-- (NSDictionary *)readConfigurationFile {
+#pragma mark - LIB'S CONFIGURATION READER
+- (NSDictionary *)readConfigurationNamed:(NSString *)plistFilename andLibBundleIdentifier:(NSString *)libBundleID {
+	
 	NSString *confpath;
 	
-	confpath = [[NSBundle mainBundle] pathForResource:NAME_CONF_SYSTEM_STYLE ofType:@"plist"];
+	confpath = [[NSBundle mainBundle] pathForResource:plistFilename ofType:@"plist"];
 	
 	if (confpath == nil || [confpath isEqualToString:@""] == YES || [FCFileManager isFileItemAtPath:confpath] == NO) {
 		
-		NSLog(@"ConfigKit WARNING\n\tAPP CONFIGURATION FILE WAS NOT FOUND.\n\t%@", confpath);
+		NSLog(@"CONFIGURATION FILE READER WARNING\n\tAPP CONFIGURATION FILE WAS NOT FOUND.\n\t%@", confpath);
 		
 		// FALLBACK TO LIB DEFAULT
-		confpath = [[NSBundle bundleWithIdentifier:LIB_CONFIGKIT_BUNDLE_ID] pathForResource:NAME_CONF_SYSTEM_STYLE ofType:@"plist"];
+		confpath = [[NSBundle bundleWithIdentifier:libBundleID] pathForResource:plistFilename ofType:@"plist"];
 	}
 	
 	// TRY TO READ APP CONFIGURATION
 	NSDictionary *conf = [FCFileManager readFileAtPathAsDictionary:confpath];
 	
 	if (conf == nil) {
-		NSLog(@"ConfigKit ERROR\n\tCONFIGURATION FILE WAS NEVER FOUND.");
+		NSLog(@"CONFIGURATION FILE READER ERROR\n\tCONFIGURATION FILE WAS NEVER FOUND.");
 	}
 	
-//	NSLog(@"%@", conf);
+	// NSLog(@"%@", conf);
 	
 	return conf;
 }
 
+// MARK: PRIVATE METHOD
+
 - (NSArray *)availableLangs {
 	NSMutableArray *langs = [NSMutableArray arrayWithCapacity:1];
-	for (NSDictionary *one in [self readConfigurationFile][@"sys-languages"][confValue]) {
+	for (NSDictionary *one in [self readConfigurationNamed:NAME_CONF_SYSTEM_STYLE andLibBundleIdentifier:LIB_CONFIGKIT_BUNDLE_ID][@"sys-languages"][confValue]) {
 		[langs addObject:one[confValue]];
 	}
 	return [NSArray arrayWithArray:langs];
