@@ -14,11 +14,11 @@ Language setter.
 Libs configuration file reader.
                        DESC
 
-  s.homepage = 'http://192.168.7.2:8081/docs/hacomp%2FConfigKit.git'
+  s.homepage = 'http://121.43.33.181:10001/summary/ha-comp%2FConfigKit.git'
 
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'Luo Yu' => 'indie.luo@gmail.com' }
-  s.source = { :git => 'http://192.168.7.2:8081/r/hacomp/ConfigKit.git', :tag => s.version.to_s }
+  s.source = { :git => 'http://121.43.33.181:10001/r/ha-comp/ConfigKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://weibo.com/blodely'
 
   s.ios.deployment_target = '9.0'
