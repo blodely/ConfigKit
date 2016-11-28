@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'ConfigKit'
-  s.version = '1.2.1'
+  s.version = '1.2.2'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
@@ -12,6 +12,7 @@ Configuration toolkit.
 System style.
 Language setter.
 Libs configuration file reader.
+Target version (min): 8.0.
                        DESC
 
   s.homepage = 'http://121.43.33.181:10001/summary/ha-comp%2FConfigKit.git'
@@ -21,7 +22,7 @@ Libs configuration file reader.
   s.source = { :git => 'http://121.43.33.181:10001/r/ha-comp/ConfigKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://weibo.com/blodely'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'ConfigKit/Classes/**/*', 'ConfigKit/Configurations/*.plist'
   
