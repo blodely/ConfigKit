@@ -1,6 +1,5 @@
 #
-# Be sure to run `pod lib lint ConfigKit.podspec'
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+# Luo Yu
 
 Pod::Spec.new do |s|
   s.name = 'ConfigKit'
@@ -15,11 +14,11 @@ Libs configuration file reader.
 Target version (min): 8.0.
                        DESC
 
-  s.homepage = 'http://121.43.33.181:10001/summary/ha-comp%2FConfigKit.git'
+  s.homepage = 'https://github.com/blodely/ConfigKit'
 
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'Luo Yu' => 'indie.luo@gmail.com' }
-  s.source = { :git => 'http://121.43.33.181:10001/r/ha-comp/ConfigKit.git', :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/blodely/ConfigKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://weibo.com/blodely'
 
   s.ios.deployment_target = '8.0'
