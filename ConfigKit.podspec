@@ -11,7 +11,7 @@ Configuration toolkit.
 System style.
 Language setter.
 Libs configuration file reader.
-Target version (min): 8.0.
+Target version (min): 8.3.
                        DESC
 
   s.homepage = 'https://github.com/blodely/ConfigKit'
@@ -21,7 +21,7 @@ Target version (min): 8.0.
   s.source = { :git => 'https://github.com/blodely/ConfigKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://weibo.com/blodely'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '8.3'
 
   s.source_files = 'ConfigKit/Classes/**/*', 'ConfigKit/Configurations/*.plist'
   
