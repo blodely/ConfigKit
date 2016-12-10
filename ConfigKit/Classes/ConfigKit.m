@@ -146,7 +146,17 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[ConfigKit class]] URLForResource:@"ConfigKitRes" withExtension:@"bundle"]];
 }
 
+- (void)excuteInSimulator:(void (^)())blockSimulator inDevice:(void (^)())blockDevice {
+#if TARGET_OS_SIMULATOR
+	blockSimulator();
+#elif TARGET_OS_IPHONE
+	blockDevice();
+#endif
+}
+
 @end
+
+#pragma mark - UICOLOR CATEGORY
 
 @implementation UIColor (ConfigKitHex)
 
@@ -193,6 +203,8 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 }
 
 @end
+
+#pragma mark - NSSTRING CATEGORY
 
 @implementation NSString (ConfigKitLocale)
 

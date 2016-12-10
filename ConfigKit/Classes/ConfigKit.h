@@ -34,7 +34,12 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 - (NSArray *)availableLanguages;
 
 #pragma mark - LIB'S CONFIGURATION READER
+
 - (NSDictionary *)readConfigurationNamed:(NSString *)plistFilename andLibBundleIdentifier:(NSString *)libBundleID;
+
+#pragma mark -
+
+- (void)excuteInSimulator:(void (^)())blockSimulator inDevice:(void (^)())blockDevice;
 
 @end
 
