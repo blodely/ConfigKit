@@ -17,6 +17,12 @@
 	
 	[[ConfigKit kit] systemStyle];
 	
+	[[ConfigKit kit] excuteInSimulator:^{
+		NSLog(@"in simulator");
+	} inDevice:^{
+		NSLog(@"in device");
+	}];
+	
     return YES;
 }
 
