@@ -1,5 +1,5 @@
 PODS:
-  - ConfigKit (1.2.4):
+  - ConfigKit (1.2.5):
     - FCFileManager (~> 1.0.18)
   - FCFileManager (1.0.18)
 
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ConfigKit: 5deaf5e3ff4df993040f6f526d9f6845d5392fd2
+  ConfigKit: ef030f966724fb99f2ce692f2da08bdcb2572027
   FCFileManager: 3d13576da1f709d37460bd7669cdf07b9d6d8bc3
 
 PODFILE CHECKSUM: dd7666b4175cde7c4c3dec38c725aa4d1b1cfaee

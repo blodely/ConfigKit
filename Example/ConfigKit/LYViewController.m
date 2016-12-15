@@ -33,6 +33,9 @@
 	
 	[@"" localized];
 	
+	[ConfigKit kit].target = [NSDate dateWithTimeIntervalSinceNow:60];
+	
+	NSLog(@"%@", [ConfigKit kit].target);
 }
 
 - (void)didReceiveMemoryWarning
