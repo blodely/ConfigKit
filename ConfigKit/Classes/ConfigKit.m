@@ -15,6 +15,8 @@ NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE 
 NSString *const CONFIGKIT_LANG = @"config.kit.lang";
 NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 
+NSString *const CONFIGKIT_TARGET_DATE = @"config.kit.target.date";
+
 @interface ConfigKit () {
 	
 	NSString *confValue;
@@ -103,6 +105,25 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 
 - (NSArray *)availableLanguages {
 	return [self readConfigurationNamed:NAME_CONF_SYSTEM_STYLE andLibBundleIdentifier:LIB_CONFIGKIT_BUNDLE_ID][@"sys-languages"][confValue];
+}
+
+#pragma mark - PROPERTY
+
+- (void)setTarget:(NSDate *)target {
+	if (target == nil || [target isKindOfClass:[NSDate class]] == NO) {
+		// REMOVE TARGET DATE
+		[[NSUserDefaults standardUserDefaults] removeObjectForKey:CONFIGKIT_TARGET_DATE];
+	}
+	[[NSUserDefaults standardUserDefaults] setInteger:(NSInteger)[target timeIntervalSince1970] forKey:CONFIGKIT_TARGET_DATE];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSDate *)target {
+	NSInteger targetTt = [[NSUserDefaults standardUserDefaults] integerForKey:CONFIGKIT_TARGET_DATE];
+	if (targetTt <= 0) {
+		return nil;
+	}
+	return [NSDate dateWithTimeIntervalSince1970:targetTt];
 }
 
 #pragma mark - LIB'S CONFIGURATION READER

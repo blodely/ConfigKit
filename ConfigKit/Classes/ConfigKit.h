@@ -17,6 +17,8 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 
 @interface ConfigKit : NSObject
 
+@property (nonatomic, weak) NSDate *target;
+
 + (instancetype)kit;
 
 /**
