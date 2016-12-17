@@ -35,6 +35,11 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 
 - (NSArray *)availableLanguages;
 
+#pragma mark CHECK
+
+- (BOOL)isFirstTimeRunApp;
+- (void)appRunned;
+
 #pragma mark - LIB'S CONFIGURATION READER
 
 - (NSDictionary *)readConfigurationNamed:(NSString *)plistFilename andLibBundleIdentifier:(NSString *)libBundleID;

@@ -16,6 +16,7 @@ NSString *const CONFIGKIT_LANG = @"config.kit.lang";
 NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 
 NSString *const CONFIGKIT_TARGET_DATE = @"config.kit.target.date";
+NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 
 @interface ConfigKit () {
 	
@@ -124,6 +125,19 @@ NSString *const CONFIGKIT_TARGET_DATE = @"config.kit.target.date";
 		return nil;
 	}
 	return [NSDate dateWithTimeIntervalSince1970:targetTt];
+}
+
+#pragma mark - METHOD
+
+#pragma mark CHECK
+
+- (BOOL)isFirstTimeRunApp {
+	return ![[NSUserDefaults standardUserDefaults] boolForKey:CONFIGKIT_FIRSTTIME_RUN_APP];
+}
+
+- (void)appRunned {
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONFIGKIT_FIRSTTIME_RUN_APP];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - LIB'S CONFIGURATION READER
