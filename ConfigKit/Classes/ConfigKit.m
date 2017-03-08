@@ -64,6 +64,8 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	// UITABBAR
 	[[UITabBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-tabbar-tint-color"][confValue]]];
 	
+	[[UITabBar appearance] setTranslucent:[conf[@"sys-tabbar-translucent"][confValue] boolValue]];
+	
 	// NAVIGATION BAR BACK BUTTON
 	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil]];
 	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil]];

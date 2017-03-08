@@ -30,6 +30,13 @@
 		<key>conf-value</key>
 		<true/>
 	</dict>
+	<key>sys-tabbar-translucent</key>
+	<dict>
+		<key>conf-value</key>
+		<true/>
+		<key>name</key>
+		<string>UITabBar translucent</string>
+	</dict>
 	<key>sys-navbar-title-foreground-color</key>
 	<dict>
 		<key>name</key>
