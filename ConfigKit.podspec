@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'ConfigKit'
-  s.version = '1.2.6'
+  s.version = '1.2.7'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
@@ -30,8 +30,6 @@ Target version (min): 8.0.
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 
   s.frameworks = 'UIKit'
   s.dependency 'FCFileManager', '~> 1.0.18'
