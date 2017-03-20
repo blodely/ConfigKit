@@ -22,6 +22,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		890F48711DD1A9E500957FF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */; };
+		895439B61E7F85CA0028BE9C /* LYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895439B41E7F85CA0028BE9C /* LYTestViewController.m */; };
+		895439B71E7F85CA0028BE9C /* LYTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895439B51E7F85CA0028BE9C /* LYTestViewController.xib */; };
 		B61C12B41DDD605900EDBB30 /* conf-system-style.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61C12B31DDD605900EDBB30 /* conf-system-style.plist */; };
 		BF76D2F2BFCF84E7B50FB729 /* Pods_ConfigKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7EDE8025C568B47195A492 /* Pods_ConfigKit_Tests.framework */; };
 		D6F982719808C40F6D5A1854 /* Pods_ConfigKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1ED508D4810FC250A98D85 /* Pods_ConfigKit_Example.framework */; };
@@ -64,6 +66,9 @@
 		63BC1240FC10BACE29193BFB /* ConfigKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ConfigKit.podspec; path = ../ConfigKit.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		895439B31E7F85CA0028BE9C /* LYTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTestViewController.h; sourceTree = "<group>"; };
+		895439B41E7F85CA0028BE9C /* LYTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTestViewController.m; sourceTree = "<group>"; };
+		895439B51E7F85CA0028BE9C /* LYTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYTestViewController.xib; sourceTree = "<group>"; };
 		91407B5EE316A2034A113185 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B61C12B31DDD605900EDBB30 /* conf-system-style.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "conf-system-style.plist"; sourceTree = "<group>"; };
 		BD7EDE8025C568B47195A492 /* Pods_ConfigKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfigKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +148,9 @@
 				B61C12B31DDD605900EDBB30 /* conf-system-style.plist */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				895439B31E7F85CA0028BE9C /* LYTestViewController.h */,
+				895439B41E7F85CA0028BE9C /* LYTestViewController.m */,
+				895439B51E7F85CA0028BE9C /* LYTestViewController.xib */,
 			);
 			name = "Example for ConfigKit";
 			path = ConfigKit;
@@ -254,7 +262,8 @@
 				ORGANIZATIONNAME = "骆昱";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = K9CJPHW4CP;
+						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -288,6 +297,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				890F48711DD1A9E500957FF5 /* LaunchScreen.storyboard in Resources */,
 				B61C12B41DDD605900EDBB30 /* conf-system-style.plist in Resources */,
+				895439B71E7F85CA0028BE9C /* LYTestViewController.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -402,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* LYAppDelegate.m in Sources */,
+				895439B61E7F85CA0028BE9C /* LYTestViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* LYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
@@ -533,13 +544,15 @@
 			baseConfigurationReference = 43CC1FED02F54900C6379FEC /* Pods-ConfigKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K9CJPHW4CP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConfigKit/ConfigKit-Prefix.pch";
 				INFOPLIST_FILE = "ConfigKit/ConfigKit-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -549,13 +562,15 @@
 			baseConfigurationReference = DBEEDBA9EB98056A2FA92970 /* Pods-ConfigKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K9CJPHW4CP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConfigKit/ConfigKit-Prefix.pch";
 				INFOPLIST_FILE = "ConfigKit/ConfigKit-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

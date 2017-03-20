@@ -7,6 +7,7 @@
 //
 
 #import "LYViewController.h"
+#import "LYTestViewController.h"
 #import "ConfigKit.h"
 
 @interface LYViewController ()
@@ -15,12 +16,16 @@
 
 @implementation LYViewController
 
+- (IBAction)pushButtonPressed:(UIButton *)sender {
+	[self.navigationController pushViewController:[[LYTestViewController alloc] init] animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	self.navigationItem.title = @"sample";
+	self.navigationItem.title = @"sample long long title";
 	
 //	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
 //	[[self availableLangs] containsObject:localeName] ? NSLog(@"YES") : NSLog(@"NO");
