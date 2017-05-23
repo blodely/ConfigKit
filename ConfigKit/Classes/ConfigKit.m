@@ -59,6 +59,8 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	// REMOVE BAR STYLE
 	if ([conf[@"sys-navbar-bottom-line"][confValue] integerValue] > 0) {
 		[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+		[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+		[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 	}
 	
 	// UITABBAR
