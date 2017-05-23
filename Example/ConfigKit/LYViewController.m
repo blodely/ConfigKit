@@ -25,6 +25,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
+	self.view.backgroundColor = [UIColor colorWithHex:@"#939393"];
+	
 	self.navigationItem.title = @"sample long long title";
 	
 //	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
