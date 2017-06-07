@@ -31,7 +31,7 @@ Target version (min): 7.0.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
 
-  s.ios.frameworks = 'UIKit'
+  s.ios.frameworks = 'UIKit', 'AudioToolbox'
   s.dependency 'FCFileManager', '~> 1.0.18'
 
 end
