@@ -15,10 +15,20 @@ FOUNDATION_EXPORT NSString *const NAME_CONF_SYSTEM_STYLE;
 FOUNDATION_EXPORT NSString *const CONFIGKIT_LANG;
 FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 
+// MARK: - CONFIGKIT
+
 @interface ConfigKit : NSObject
 
+/**
+ target datetime
+ */
 @property (nonatomic, weak) NSDate *target;
 
+/**
+ shared instance
+
+ @return shared instance of ConfigKit
+ */
 + (instancetype)kit;
 
 /**
