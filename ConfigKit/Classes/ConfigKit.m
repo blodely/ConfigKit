@@ -8,6 +8,7 @@
 
 #import "ConfigKit.h"
 #import "FCFileManager.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 NSString *const LIB_CONFIGKIT_BUNDLE_ID = @"org.cocoapods.ConfigKit";
 NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE CHANGED
@@ -191,6 +192,29 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 #elif TARGET_OS_IPHONE
 	blockDevice();
 #endif
+}
+
+// MARK: SOUND
+
+- (void)playSoundWavFileNamed:(NSString *)soundName inBundle:(NSBundle *)bundle {
+	
+	// ALLOCATION SOUND
+	SystemSoundID soundID;
+	
+	// CREATE SOUND WITH FILEPATH
+	if (bundle == nil) {
+		// FALL BACK TO DEDAULT BUNDLE
+		AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL URLWithString:[[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"]], &soundID);
+	} else {
+		AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL URLWithString:[bundle pathForResource:soundName ofType:@"wav"]], &soundID);
+	}
+	
+	// PLAY SOUND
+	AudioServicesPlaySystemSound(soundID);
+}
+
+- (void)playSoundWavFileNamed:(NSString *)soundName {
+	[self playSoundWavFileNamed:soundName inBundle:[NSBundle mainBundle]];
 }
 
 @end
