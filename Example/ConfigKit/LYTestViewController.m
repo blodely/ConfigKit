@@ -7,12 +7,18 @@
 //
 
 #import "LYTestViewController.h"
+#import <ConfigKit/ConfigKit.h>
 
 @interface LYTestViewController ()
 
 @end
 
 @implementation LYTestViewController
+
+- (IBAction)playSoundButtonPressed:(UIButton *)sender {
+	[[ConfigKit kit] playSoundWavFileNamed:@"answer-right"
+								  inBundle:[NSBundle bundleWithPath:[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"game-sound.bundle"]]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

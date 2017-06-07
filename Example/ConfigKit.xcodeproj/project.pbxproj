@@ -23,7 +23,6 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		890F48711DD1A9E500957FF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */; };
 		892BB0ED1EE7C9D3004D2A77 /* game-sound.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 892BB0EC1EE7C9D3004D2A77 /* game-sound.bundle */; };
-		892BB0EF1EE7CBAB004D2A77 /* answer-right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 892BB0EE1EE7CBAB004D2A77 /* answer-right.wav */; };
 		895439B61E7F85CA0028BE9C /* LYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895439B41E7F85CA0028BE9C /* LYTestViewController.m */; };
 		895439B71E7F85CA0028BE9C /* LYTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895439B51E7F85CA0028BE9C /* LYTestViewController.xib */; };
 		B61C12B41DDD605900EDBB30 /* conf-system-style.plist in Resources */ = {isa = PBXBuildFile; fileRef = B61C12B31DDD605900EDBB30 /* conf-system-style.plist */; };
@@ -69,7 +68,6 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		892BB0EC1EE7C9D3004D2A77 /* game-sound.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "game-sound.bundle"; sourceTree = "<group>"; };
-		892BB0EE1EE7CBAB004D2A77 /* answer-right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "answer-right.wav"; path = "game-sound.bundle/answer-right.wav"; sourceTree = "<group>"; };
 		895439B31E7F85CA0028BE9C /* LYTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTestViewController.h; sourceTree = "<group>"; };
 		895439B41E7F85CA0028BE9C /* LYTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTestViewController.m; sourceTree = "<group>"; };
 		895439B51E7F85CA0028BE9C /* LYTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LYTestViewController.xib; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				890F48701DD1A9E500957FF5 /* LaunchScreen.storyboard */,
 				6003F5A5195388D20070C39A /* LYViewController.h */,
 				6003F5A6195388D20070C39A /* LYViewController.m */,
-				892BB0EE1EE7CBAB004D2A77 /* answer-right.wav */,
 				892BB0EC1EE7C9D3004D2A77 /* game-sound.bundle */,
 				B61C12B31DDD605900EDBB30 /* conf-system-style.plist */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -307,7 +304,6 @@
 				895439B71E7F85CA0028BE9C /* LYTestViewController.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				892BB0EF1EE7CBAB004D2A77 /* answer-right.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
