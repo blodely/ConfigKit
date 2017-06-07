@@ -31,10 +31,14 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
  */
 + (instancetype)kit;
 
+// MARL: STYLE
+
 /**
  *  CONFIGURE SYSTEM STYLE
  */
 - (void)systemStyle;
+
+// MARK: LOCALE
 
 /**
  *  LANGUAGES
@@ -57,6 +61,10 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 #pragma mark -
 
 - (void)excuteInSimulator:(void (^)())blockSimulator inDevice:(void (^)())blockDevice;
+
+// MARK: SOUND
+
+- (void)playSoundNamed:(NSString *)soundName inBundle:(NSBundle *)bundle;
 
 @end
 
