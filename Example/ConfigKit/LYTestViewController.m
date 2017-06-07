@@ -16,8 +16,9 @@
 @implementation LYTestViewController
 
 - (IBAction)playSoundButtonPressed:(UIButton *)sender {
-	[[ConfigKit kit] playSoundWavFileNamed:@"answer-right"
-								  inBundle:[NSBundle bundleWithPath:[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"game-sound.bundle"]]];
+	
+	[[ConfigKit kit] playSoundWavFileNamed:@"answer-right" inBundle:[NSBundle bundleNamed:@"game-sound"]];
+	
 }
 
 - (void)viewDidLoad {

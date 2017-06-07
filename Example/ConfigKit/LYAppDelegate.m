@@ -7,7 +7,7 @@
 //
 
 #import "LYAppDelegate.h"
-#import "ConfigKit.h"
+#import <ConfigKit/ConfigKit.h>
 
 
 @implementation LYAppDelegate
