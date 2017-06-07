@@ -266,20 +266,3 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 }
 
 @end
-
-#pragma mark - NSSTRING CATEGORY
-
-@implementation NSString (ConfigKitLocale)
-
-- (NSString *)localized {
-	
-	// SET DEFAULT VALUE
-	if ([[NSUserDefaults standardUserDefaults] objectForKey:CONFIGKIT_LANG] == nil) {
-		[[NSUserDefaults standardUserDefaults] setObject:@"zh-Hans" forKey:CONFIGKIT_LANG];
-		[[NSUserDefaults standardUserDefaults] synchronize];
-	}
-	
-	return [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:CONFIGKIT_LANG]] ofType:@"lproj"]] localizedStringForKey:(self) value:nil table:@"Localizable"];
-}
-
-@end
