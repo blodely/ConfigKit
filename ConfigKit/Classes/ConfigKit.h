@@ -64,6 +64,8 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 
 // MARK: SOUND
 
+- (void)playSoundNamed:(NSString *)soundName;
+
 - (void)playSoundNamed:(NSString *)soundName inBundle:(NSBundle *)bundle;
 
 @end
