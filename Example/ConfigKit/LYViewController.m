@@ -20,12 +20,9 @@
 	[self.navigationController pushViewController:[[LYTestViewController alloc] init] animated:YES];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-	
-	self.view.backgroundColor = [UIColor colorWithHex:@"#939393"];
+	// DO ANY ADDITIONAL SETUP AFTER LOADING THE VIEW, TYPICALLY FROM A NIB.
 	
 	self.navigationItem.title = @"sample long long title";
 	

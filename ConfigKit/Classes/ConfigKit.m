@@ -23,6 +23,9 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	
 	NSString *confValue;
 }
+
+- (UIColor *)colorWithHex:(NSString *)hexstring;
+
 @end
 
 @implementation ConfigKit
@@ -52,9 +55,9 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
 	
 	// NAVIGATION BAR TITLE
-	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHex:conf[@"sys-navbar-bar-tint-color"][confValue]]];
-	[[UINavigationBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-navbar-tint-color"][confValue]]];
-	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
+	[[UINavigationBar appearance] setBarTintColor:[self colorWithHex:conf[@"sys-navbar-bar-tint-color"][confValue]]];
+	[[UINavigationBar appearance] setTintColor:[self colorWithHex:conf[@"sys-navbar-tint-color"][confValue]]];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[self colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
 	[[UINavigationBar appearance] setTranslucent:[conf[@"sys-navbar-translucent"][confValue] boolValue]];
 	
 	// REMOVE BAR STYLE
@@ -65,7 +68,7 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	}
 	
 	// UITABBAR
-	[[UITabBar appearance] setTintColor:[UIColor colorWithHex:conf[@"sys-tabbar-tint-color"][confValue]]];
+	[[UITabBar appearance] setTintColor:[self colorWithHex:conf[@"sys-tabbar-tint-color"][confValue]]];
 	
 	[[UITabBar appearance] setTranslucent:[conf[@"sys-tabbar-translucent"][confValue] boolValue]];
 	
@@ -133,6 +136,50 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 }
 
 #pragma mark - METHOD
+
+#pragma mark PRIVATE METHOD
+
+- (UIColor *)colorWithHex:(NSString *)hexstring {
+	// WE FOUND AN EMPTY STRING, WE ARE RETURNING NOTHING
+	if (hexstring.length == 0) {
+		return nil;
+	}
+	
+	// CHECK FOR HASH AND ADD THE MISSING HASH
+	if('#' != [hexstring characterAtIndex:0]) {
+		hexstring = [NSString stringWithFormat:@"#%@", hexstring];
+	}
+	
+	// RETURNING NO OBJECT ON WRONG ALPHA VALUES
+	NSArray *validHexStringLengths = @[@7,];
+	NSNumber *hexStringLengthNumber = [NSNumber numberWithUnsignedInteger:hexstring.length];
+	if ([validHexStringLengths indexOfObject:hexStringLengthNumber] == NSNotFound) {
+		return nil;
+	}
+	
+	unsigned value = 0;
+	NSScanner *hexValueScanner = nil;
+	
+	NSString *redHex = [NSString stringWithFormat:@"0x%@", [hexstring substringWithRange:NSMakeRange(1, 2)]];
+	hexValueScanner = [NSScanner scannerWithString:redHex];
+	[hexValueScanner scanHexInt:&value];
+	unsigned redInt = value;
+	hexValueScanner = nil;
+	
+	NSString *greenHex = [NSString stringWithFormat:@"0x%@", [hexstring substringWithRange:NSMakeRange(3, 2)]];
+	hexValueScanner = [NSScanner scannerWithString:greenHex];
+	[hexValueScanner scanHexInt:&value];
+	unsigned greenInt = value;
+	hexValueScanner = nil;
+	
+	NSString *blueHex = [NSString stringWithFormat:@"0x%@", [hexstring substringWithRange:NSMakeRange(5, 2)]];
+	hexValueScanner = [NSScanner scannerWithString:blueHex];
+	[hexValueScanner scanHexInt:&value];
+	unsigned blueInt = value;
+	hexValueScanner = nil;
+	
+	return [UIColor colorWithRed:redInt/255.0f green:greenInt/255.0f blue:blueInt/255.0f alpha:1.0f];
+}
 
 #pragma mark CHECK
 
@@ -215,54 +262,6 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 
 - (void)playSoundWavFileNamed:(NSString *)soundName {
 	[self playSoundWavFileNamed:soundName inBundle:[NSBundle mainBundle]];
-}
-
-@end
-
-#pragma mark - UICOLOR CATEGORY
-
-@implementation UIColor (ConfigKitHex)
-
-+ (UIColor *)colorWithHex:(NSString *)hexstring {
-	// WE FOUND AN EMPTY STRING, WE ARE RETURNING NOTHING
-	if (hexstring.length == 0) {
-		return nil;
-	}
-	
-	// CHECK FOR HASH AND ADD THE MISSING HASH
-	if('#' != [hexstring characterAtIndex:0]) {
-		hexstring = [NSString stringWithFormat:@"#%@", hexstring];
-	}
-	
-	// RETURNING NO OBJECT ON WRONG ALPHA VALUES
-	NSArray *validHexStringLengths = @[@7,];
-	NSNumber *hexStringLengthNumber = [NSNumber numberWithUnsignedInteger:hexstring.length];
-	if ([validHexStringLengths indexOfObject:hexStringLengthNumber] == NSNotFound) {
-		return nil;
-	}
-	
-	unsigned value = 0;
-	NSScanner *hexValueScanner = nil;
-	
-	NSString *redHex = [NSString stringWithFormat:@"0x%@", [hexstring substringWithRange:NSMakeRange(1, 2)]];
-	hexValueScanner = [NSScanner scannerWithString:redHex];
-	[hexValueScanner scanHexInt:&value];
-	unsigned redInt = value;
-	hexValueScanner = nil;
-	
-	NSString *greenHex = [NSString stringWithFormat:@"0x%@", [hexstring substringWithRange:NSMakeRange(3, 2)]];
-	hexValueScanner = [NSScanner scannerWithString:greenHex];
-	[hexValueScanner scanHexInt:&value];
-	unsigned greenInt = value;
-	hexValueScanner = nil;
-	
-	NSString *blueHex = [NSString stringWithFormat:@"0x%@", [hexstring substringWithRange:NSMakeRange(5, 2)]];
-	hexValueScanner = [NSScanner scannerWithString:blueHex];
-	[hexValueScanner scanHexInt:&value];
-	unsigned blueInt = value;
-	hexValueScanner = nil;
-	
-	return [UIColor colorWithRed:redInt/255.0f green:greenInt/255.0f blue:blueInt/255.0f alpha:1.0f];
 }
 
 @end

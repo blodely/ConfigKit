@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <ConfigKit/NSBundle+ConfigKit.h>
 #import <ConfigKit/NSString+ConfigKit.h>
 
@@ -69,13 +68,5 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 - (void)playSoundWavFileNamed:(NSString *)soundName;
 
 - (void)playSoundWavFileNamed:(NSString *)soundName inBundle:(NSBundle *)bundle;
-
-@end
-
-@class UIColor;
-
-@interface UIColor (ConfigKitHex)
-
-+ (UIColor *)colorWithHex:(NSString *)hexstring;
 
 @end
