@@ -73,9 +73,17 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	[[UITabBar appearance] setTranslucent:[conf[@"sys-tabbar-translucent"][confValue] boolValue]];
 	
 	// NAVIGATION BAR BACK BUTTON
-	[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil]];
-	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil]];
-	[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+	UIImage *backImg = [UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil];
+	[[UINavigationBar appearance] setBackIndicatorImage:backImg];
+	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backImg];
+	
+	if (@available(iOS 11.0, *)) {
+		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, 0)
+															 forBarMetrics:UIBarMetricsDefault];
+	} else {
+		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin)
+															 forBarMetrics:UIBarMetricsDefault];
+	}
 }
 
 - (void)setLocale:(NSString *)localeName {
