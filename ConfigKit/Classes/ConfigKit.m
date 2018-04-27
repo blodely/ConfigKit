@@ -241,14 +241,6 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[ConfigKit class]] URLForResource:@"ConfigKitRes" withExtension:@"bundle"]];
 }
 
-- (void)excuteInSimulator:(void (^)())blockSimulator inDevice:(void (^)())blockDevice {
-#if TARGET_OS_SIMULATOR
-	blockSimulator();
-#elif TARGET_OS_IPHONE
-	blockDevice();
-#endif
-}
-
 // MARK: SOUND
 
 - (void)playSoundWavFileNamed:(NSString *)soundName inBundle:(NSBundle *)bundle {

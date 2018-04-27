@@ -59,10 +59,6 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 
 - (NSDictionary *)readConfigurationNamed:(NSString *)plistFilename andLibBundleIdentifier:(NSString *)libBundleID;
 
-#pragma mark -
-
-- (void)excuteInSimulator:(void (^)())blockSimulator inDevice:(void (^)())blockDevice;
-
 // MARK: SOUND
 
 - (void)playSoundWavFileNamed:(NSString *)soundName;
