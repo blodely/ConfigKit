@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'ConfigKit'
-  s.version = '1.2.11'
+  s.version = '1.2.12'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
