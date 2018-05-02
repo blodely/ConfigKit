@@ -75,6 +75,7 @@
 		B61C12B31DDD605900EDBB30 /* conf-system-style.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "conf-system-style.plist"; sourceTree = "<group>"; };
 		BD7EDE8025C568B47195A492 /* Pods_ConfigKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfigKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEDBA9EB98056A2FA92970 /* Pods-ConfigKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfigKit_Example/Pods-ConfigKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		FC98DF19209987B30053C873 /* push_repo_lyspecs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = push_repo_lyspecs.sh; path = ../push_repo_lyspecs.sh; sourceTree = "<group>"; };
 		FCD4351146381AEF6A794753 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +193,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				FC98DF19209987B30053C873 /* push_repo_lyspecs.sh */,
 				63BC1240FC10BACE29193BFB /* ConfigKit.podspec */,
 				FCD4351146381AEF6A794753 /* README.md */,
 				91407B5EE316A2034A113185 /* LICENSE */,
