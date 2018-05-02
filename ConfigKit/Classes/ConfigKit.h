@@ -53,16 +53,31 @@ FOUNDATION_EXPORT NSString *const NOTIF_LANGUAGE_CHANGED;
 #pragma mark CHECK
 
 - (BOOL)isFirstTimeRunApp;
+
+/**
+ mark app runned first time
+ */
 - (void)appRunned;
 
 #pragma mark - LIB'S CONFIGURATION READER
 
 - (NSDictionary *)readConfigurationNamed:(NSString *)plistFilename andLibBundleIdentifier:(NSString *)libBundleID;
 
-// MARK: SOUND
+#pragma mark SOUND
 
+/**
+ play wav sound file
+
+ @param soundName file name
+ */
 - (void)playSoundWavFileNamed:(NSString *)soundName;
 
+/**
+ play wav sound file in bundle
+
+ @param soundName file name
+ @param bundle bundle object
+ */
 - (void)playSoundWavFileNamed:(NSString *)soundName inBundle:(NSBundle *)bundle;
 
 @end
