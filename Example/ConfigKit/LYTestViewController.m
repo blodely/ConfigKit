@@ -7,7 +7,7 @@
 //
 
 #import "LYTestViewController.h"
-#import <ConfigKit/ConfigKit.h>
+#import <LYConfigKit/LYConfigKit.h>
 
 @interface LYTestViewController ()
 
@@ -17,7 +17,7 @@
 
 - (IBAction)playSoundButtonPressed:(UIButton *)sender {
 	
-	[[ConfigKit kit] playSoundWavFileNamed:@"answer-right" inBundle:[NSBundle bundleNamed:@"game-sound"]];
+	[[LYConfigKit kit] playSoundWavFileNamed:@"answer-right" inBundle:[NSBundle bundleNamed:@"game-sound"]];
 	
 }
 

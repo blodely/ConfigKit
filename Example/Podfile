@@ -3,7 +3,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'ConfigKit_Example' do
-  pod 'ConfigKit', :path => '../'
+  pod 'LYConfigKit', :path => '../'
   
   # pod 'SVProgressHUD', '~> 2.0.3'
 

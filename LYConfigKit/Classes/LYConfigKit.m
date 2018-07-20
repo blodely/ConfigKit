@@ -3,10 +3,28 @@
 //  ConfigKit
 //
 //  CREATED BY LUO YU ON 2016-09-13.
-//  COPYRIGHT © 2016 LUO YU. ALL RIGHTS RESERVED.
+//  COPYRIGHT © 2016 骆昱(LUO YU) <indie.luo@gmail.com>
+//
+//	Permission is hereby granted, free of charge, to any person obtaining a copy
+//	of this software and associated documentation files (the "Software"), to deal
+//	in the Software without restriction, including without limitation the rights
+//	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//	copies of the Software, and to permit persons to whom the Software is
+//	furnished to do so, subject to the following conditions:
+//
+//	The above copyright notice and this permission notice shall be included in
+//	all copies or substantial portions of the Software.
+//
+//	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//	THE SOFTWARE.
 //
 
-#import "ConfigKit.h"
+#import "LYConfigKit.h"
 #import "FCFileManager.h"
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -19,7 +37,7 @@ NSString *const NOTIF_LANGUAGE_CHANGED = @"config.kit.notif.language.changed";
 NSString *const CONFIGKIT_TARGET_DATE = @"config.kit.target.date";
 NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 
-@interface ConfigKit () {
+@interface LYConfigKit () {
 	
 	NSString *confValue;
 }
@@ -28,14 +46,14 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 
 @end
 
-@implementation ConfigKit
+@implementation LYConfigKit
 
 + (instancetype)kit {
-	static ConfigKit *sharedConfigKit;
+	static LYConfigKit *sharedConfigKit;
 	
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		sharedConfigKit = [[ConfigKit alloc] init];
+		sharedConfigKit = [[LYConfigKit alloc] init];
 	});
 	return sharedConfigKit;
 }
@@ -238,7 +256,7 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 }
 
 - (NSBundle *)configkitResBundle {
-	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[ConfigKit class]] URLForResource:@"ConfigKitRes" withExtension:@"bundle"]];
+	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[LYConfigKit class]] URLForResource:@"ConfigKitRes" withExtension:@"bundle"]];
 }
 
 // MARK: SOUND

@@ -2,7 +2,7 @@
 # Luo Yu
 
 Pod::Spec.new do |s|
-  s.name = 'ConfigKit'
+  s.name = 'LYConfigKit'
   s.version = '1.2.13'
   s.summary = 'Configuration toolkit.'
 
@@ -23,10 +23,10 @@ Target version (min): 7.0.
 
   s.ios.deployment_target = '7.0'
 
-  s.source_files = 'ConfigKit/Classes/**/*', 'ConfigKit/Configurations/*.plist'
+  s.source_files = 'LYConfigKit/Classes/**/*', 'LYConfigKit/Configurations/*.plist'
   
   s.resource_bundles = {
-    'ConfigKitRes' => ['ConfigKit/Assets/*.png']
+    'ConfigKitRes' => ['LYConfigKit/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

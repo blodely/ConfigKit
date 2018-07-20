@@ -1,6 +1,6 @@
 //
 //  LYViewController.m
-//  ConfigKit
+//  LYConfigKit
 //
 //  CREATED BY LUO YU ON 2016-10-11.
 //  COPYRIGHT © 2016 LUO YU. ALL RIGHTS RESERVED.
@@ -8,7 +8,7 @@
 
 #import "LYViewController.h"
 #import "LYTestViewController.h"
-#import <ConfigKit/ConfigKit.h>
+#import <LYConfigKit/LYConfigKit.h>
 
 @interface LYViewController ()
 
@@ -29,17 +29,17 @@
 //	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
 //	[[self availableLangs] containsObject:localeName] ? NSLog(@"YES") : NSLog(@"NO");
 	
-	[[ConfigKit kit] availableLanguages];
+	[[LYConfigKit kit] availableLanguages];
 	
-	[[ConfigKit kit] setLocale:@"zh-Hans"];
+	[[LYConfigKit kit] setLocale:@"zh-Hans"];
 	
 	NSLocalizedString(@"", nil);
 	
 	[@"" localized];
 	
-	[ConfigKit kit].target = [NSDate dateWithTimeIntervalSinceNow:60];
+	[LYConfigKit kit].target = [NSDate dateWithTimeIntervalSinceNow:60];
 	
-	NSLog(@"%@", [ConfigKit kit].target);
+	NSLog(@"%@", [LYConfigKit kit].target);
 }
 
 - (void)didReceiveMemoryWarning
