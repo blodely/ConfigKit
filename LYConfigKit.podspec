@@ -26,7 +26,7 @@ Target version (min): 7.0.
   s.source_files = 'LYConfigKit/Classes/**/*', 'LYConfigKit/Configurations/*.plist'
   
   s.resource_bundles = {
-    'ConfigKitRes' => ['LYConfigKit/Assets/*.png']
+    'LYConfigKitRes' => ['LYConfigKit/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

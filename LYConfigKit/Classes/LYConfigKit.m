@@ -28,7 +28,7 @@
 #import "FCFileManager.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-NSString *const LIB_CONFIGKIT_BUNDLE_ID = @"org.cocoapods.ConfigKit";
+NSString *const LIB_CONFIGKIT_BUNDLE_ID = @"org.cocoapods.LYConfigKit";
 NSString *const NAME_CONF_SYSTEM_STYLE = @"conf-system-style"; // SHOUND NOT BE CHANGED
 
 NSString *const CONFIGKIT_LANG = @"config.kit.lang";
@@ -256,7 +256,7 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 }
 
 - (NSBundle *)configkitResBundle {
-	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[LYConfigKit class]] URLForResource:@"ConfigKitRes" withExtension:@"bundle"]];
+	return [NSBundle bundleWithURL:[[NSBundle bundleForClass:[LYConfigKit class]] URLForResource:@"LYConfigKitRes" withExtension:@"bundle"]];
 }
 
 // MARK: SOUND
