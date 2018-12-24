@@ -96,7 +96,7 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backImg];
 	
 	if (@available(iOS 11.0, *)) {
-		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, 0)
+		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, UIApplication.sharedApplication.keyWindow.safeAreaInsets.top)
 															 forBarMetrics:UIBarMetricsDefault];
 	} else {
 		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin)
