@@ -99,7 +99,8 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, UIApplication.sharedApplication.keyWindow.safeAreaInsets.top)
 															 forBarMetrics:UIBarMetricsDefault];
 	} else {
-		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin)
+//		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin)
+		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, 20) // iOS 7.0+
 															 forBarMetrics:UIBarMetricsDefault];
 	}
 }
