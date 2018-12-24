@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'LYConfigKit'
-  s.version = '1.2.14'
+  s.version = '1.2.15'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
