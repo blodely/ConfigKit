@@ -78,9 +78,8 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[self colorWithHex:conf[@"sys-navbar-title-foreground-color"][confValue]],}];
 	[[UINavigationBar appearance] setTranslucent:[conf[@"sys-navbar-translucent"][confValue] boolValue]];
 	
-	// REMOVE BAR STYLE
+	// REMOVE NAV BAR BOTTOM LINE STYLE
 	if ([conf[@"sys-navbar-bottom-line"][confValue] integerValue] > 0) {
-//		[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 		[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
 		[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 	}
