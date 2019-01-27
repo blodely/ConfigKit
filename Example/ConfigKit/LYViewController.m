@@ -25,6 +25,7 @@
 	// DO ANY ADDITIONAL SETUP AFTER LOADING THE VIEW, TYPICALLY FROM A NIB.
 	
 	self.navigationItem.title = @"sample long long title";
+	[self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
 	
 //	NSLog(@"\n\n%@\n=======\n%@", [self availableLanguages], [self availableLangs]);
 //	[[self availableLangs] containsObject:localeName] ? NSLog(@"YES") : NSLog(@"NO");
