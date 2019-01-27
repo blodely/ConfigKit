@@ -90,7 +90,6 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	[[UITabBar appearance] setTranslucent:[conf[@"sys-tabbar-translucent"][confValue] boolValue]];
 	
 	// NAVIGATION BAR BACK BUTTON
-//	UIImage *backImg = [UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil];
 	UIImage *backImg = [UIImage imageNamed:@"nav-ico-back"];
 	if (backImg == nil) {
 		backImg = [UIImage imageNamed:@"nav-ico-back" inBundle:[self configkitResBundle] compatibleWithTraitCollection:nil];
