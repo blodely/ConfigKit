@@ -97,14 +97,10 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	[[UINavigationBar appearance] setBackIndicatorImage:backImg];
 	[[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backImg];
 	
-	if (@available(iOS 11.0, *)) {
-		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, UIApplication.sharedApplication.keyWindow.safeAreaInsets.top)
-															 forBarMetrics:UIBarMetricsDefault];
-	} else {
-//		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin)
-		[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, 20) // iOS 7.0+
-															 forBarMetrics:UIBarMetricsDefault];
-	}
+	// IF YOU WANT TO REMOVE BACK BAR BUTTON TITLE
+	// JUST ADD
+	// [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
+	// TO YOUR VIEW CONTROLLER THAT IN FIRST ITEM OF THE NAV STACK
 }
 
 - (void)setLocale:(NSString *)localeName {
