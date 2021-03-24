@@ -1,13 +1,13 @@
 PODS:
   - FCFileManager (1.0.18)
-  - LYConfigKit (1.2.15):
+  - LYConfigKit (1.12.0):
     - FCFileManager (~> 1.0.18)
 
 DEPENDENCIES:
   - LYConfigKit (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FCFileManager
 
 EXTERNAL SOURCES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FCFileManager: 3d13576da1f709d37460bd7669cdf07b9d6d8bc3
-  LYConfigKit: 7366a44c26d462cb5fc077a4ec77b7ff3c683cdb
+  LYConfigKit: fb180aff486386bcd386090f4a49c3c5e93d71da
 
-PODFILE CHECKSUM: 7bab8d17952204c5fd204d241c137d12f318032c
+PODFILE CHECKSUM: f1823e41729098ceaaae3511b98e750277f7a171
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1
