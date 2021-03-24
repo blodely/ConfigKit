@@ -70,7 +70,7 @@ NSString *const CONFIGKIT_FIRSTTIME_RUN_APP = @"config.kit.first.time.run.app";
 	__weak NSDictionary *conf = [self readConfigurationNamed:NAME_CONF_SYSTEM_STYLE andLibBundleIdentifier:LIB_CONFIGKIT_BUNDLE_ID];
 	
 	// STATUS BAR
-	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
+//	[[UIApplication sharedApplication] setStatusBarStyle:([conf[@"sys-statusbar-style"][confValue] intValue] == 0 ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent)];
 	
 	// NAVIGATION BAR TITLE
 	[[UINavigationBar appearance] setBarTintColor:[self colorWithHex:conf[@"sys-navbar-bar-tint-color"][confValue]]];
