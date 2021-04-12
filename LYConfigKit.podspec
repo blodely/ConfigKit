@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'LYConfigKit'
-  s.version = '1.12.0'
+  s.version = '1.12.1'
   s.summary = 'Configuration toolkit.'
 
   s.description = <<-DESC
@@ -34,6 +34,6 @@ Versions: 1.2.x=>iOS7; 1.12.x=>Xcode12.iOS9
   # s.public_header_files = 'Pod/Classes/**/*.h'
 
   s.ios.frameworks = 'UIKit', 'AudioToolbox'
-  s.dependency 'FCFileManager', '~> 1.0.18'
+  s.dependency 'FCFileManager', '~> 1.0.20'
 
 end
