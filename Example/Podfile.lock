@@ -1,7 +1,7 @@
 PODS:
-  - FCFileManager (1.0.18)
+  - FCFileManager (1.0.20)
   - LYConfigKit (1.12.0):
-    - FCFileManager (~> 1.0.18)
+    - FCFileManager (~> 1.0.20)
 
 DEPENDENCIES:
   - LYConfigKit (from `../`)
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FCFileManager: 3d13576da1f709d37460bd7669cdf07b9d6d8bc3
-  LYConfigKit: fb180aff486386bcd386090f4a49c3c5e93d71da
+  FCFileManager: e0f73316e6aa2eb04d2ff4caa75fe7df1ae44270
+  LYConfigKit: 094a9a1e86efe0a7203c07369eb37c96533d713a
 
 PODFILE CHECKSUM: f1823e41729098ceaaae3511b98e750277f7a171
 
